@@ -1,0 +1,6 @@
+# Research outputs — personal, don't commit
+outputs/*
+!outputs/.gitkeep
+
+# macOS
+.DS_Store

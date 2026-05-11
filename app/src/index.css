@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    /* Crisp sub-pixel rendering — essential for Inter to look sharp */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* JetBrains Mono on elements that use font-mono */
+  .font-mono {
+    font-feature-settings: "liga" 1, "calt" 1;
+  }
+}

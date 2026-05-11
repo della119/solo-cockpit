@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: solo-cockpit
+    runtime: node
+    rootDir: app
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: IP_DAILY_LIMIT
+        value: "5"
+      - key: RATE_LIMIT_PER_HOUR
+        value: "20"
+      - key: MAX_DAILY_REQUESTS
+        value: "200"
+      # Set these in Render dashboard — do NOT commit real values
+      - key: ANTHROPIC_BASE_URL
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: TAVILY_API_KEY
+        sync: false
