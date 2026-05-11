@@ -24,6 +24,7 @@ const DIST_PATH  = join(__dirname, '..', 'dist');
 dotenv.config({ override: true });
 
 const app = express();
+app.set('trust proxy', 1); // Render sits behind a reverse proxy — trust X-Forwarded-For for real client IPs
 app.use(cors());
 app.use(express.json({ limit: '10mb' }));
 
