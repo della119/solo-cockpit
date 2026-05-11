@@ -366,6 +366,9 @@ export default function SoloOperatorCockpit() {
   const L = UI[lang];
   const modes: any = getModes(lang);
 
+  // Warm up the server on mount — prevents cold-start failures on Render free tier
+  useEffect(() => { fetch('/api/health').catch(() => {}); }, []);
+
   // Load history and saved topics on mount (localStorage — replaces window.storage used in the artifact)
   useEffect(() => {
     try {
